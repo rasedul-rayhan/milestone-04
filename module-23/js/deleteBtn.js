@@ -16,8 +16,12 @@ document.getElementById('input-text')
 const textDlt = document.getElementById('text-dlt');
 document.getElementById('dlt-btn').addEventListener('click', function(){
     textDlt.style.display = 'none';
+    inputText = document.getElementById('input-text');
+    inputText.value = '';
 })
 
 document.getElementById('reset-btn').addEventListener('click', function(){
     textDlt.style.display = ''
+    inputText = document.getElementById('input-text');
+    inputText.value = '';
 })

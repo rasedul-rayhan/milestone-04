@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Practicing</title>
+</head>
+<body>
+    <main id="main-container">
+        <section id="tourist-container">
+            <h1>Tourist Places</h1>
+            <ul id="tourist-places">
+                <li>Bagerhat</li>
+                <li>Khulna</li>
+                <li>Dhaka</li>
+                <li>Chitogong</li>
+            </ul>
+        </section>
+
+        <section id="fnds-container">
+            <h1>Friends</h1>
+            <ol id="fnds-list">
+                <li>Ariful</li>
+                <li>Hibjur</li>
+                <li>Fahad</li>
+                <li>Imran</li>
+            </ol>
+        </section>
+    </main>
+    <script src="/js/removeChildren.js"></script>
+    <script>
+        const touristPlace = document.getElementById('tourist-places');
+        const anotherplace = document.createElement('li');
+        anotherplace.innerText = 'Rajshahi';
+        touristPlace.appendChild(anotherplace);
+        // touristPlace.removeChild(touristPlace.lastElementChild)
+        // touristPlace.removeChild(touristPlace.firstElementChild)
+
+
+        // For subject area
+        const mainContainer = document.getElementById('main-container')
+        const subjectSection = document.createElement('section');
+        mainContainer.appendChild(subjectSection)
+
+        const subTitle = document.createElement('h1');
+        subTitle.innerText = "Subjects";
+        subjectSection.appendChild(subTitle);
+
+        // subject ul create and connected
+        const ul = document.createElement('ul');
+        ul.id = 'subList';
+        subjectSection.appendChild(ul);
+
+        // first li
+        const li1 = document.createElement('li');
+        li1.innerText = 'Bangla';
+        ul.appendChild(li1);
+
+        // second li
+        const li2 = document.createElement('li');
+        li2.innerText = 'English';
+        li2.className = 'english';
+        ul.appendChild(li2);
+
+        // third li
+        const li3 = document.createElement('li');
+        li3.innerText = "Math";
+        ul.appendChild(li3);
+
+        
+
+
+
+    </script>
+</body>
+</html>
