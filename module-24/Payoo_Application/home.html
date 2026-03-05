@@ -57,33 +57,34 @@
                 <p class="text-neutral/50">Enjoy easy and convenient financial services with us. Cashout charge is low
                     and </p>
             </div>
+            <!-- home all buttons -->
             <div class="buttons grid grid-cols-3 gap-3 justify-between mb-6">
-                <button class="btn h-24 py-3 flex-col rounded-2xl">
+                <button id="add-money-p-btn" class="main-btn btn h-24 py-3 flex-col rounded-2xl" onclick="btnColor(0)">
                     <img src="/assets/opt-1.png" alt="">
                     <p>Add Money</p>
                 </button>
 
-                <button class="btn h-full py-3 flex-col rounded-2xl">
+                <button id="cash-out-p-btn" class="main-btn btn h-full py-3 flex-col rounded-2xl" onclick="btnColor(1)">
                     <img src="/assets/opt-2.png" alt="">
                     <p>Cash Out</p>
                 </button>
 
-                <button class="btn h-full py-3 flex-col rounded-2xl">
+                <button id="transfer-money-p-btn" class="main-btn btn h-full py-3 flex-col rounded-2xl" onclick="btnColor(2)">
                     <img src="/assets/opt-3.png" alt="">
                     <p>Transfer Money</p>
                 </button>
 
-                <button class="btn h-24 py-3 flex-col rounded-2xl">
+                <button class="main-btn btn h-24 py-3 flex-col rounded-2xl" onclick="btnColor(3)">
                     <img src="/assets/opt-4.png" alt="">
                     <p>Get Bonus</p>
                 </button>
 
-                <button class="btn h-full py-3 flex-col rounded-2xl">
+                <button class="main-btn btn h-full py-3 flex-col rounded-2xl" onclick="btnColor(4)">
                     <img src="/assets/opt-5.png" alt="">
                     <p>Pay Bill</p>
                 </button>
 
-                <button class="btn h-full py-3 flex-col rounded-2xl">
+                <button class="main-btn btn h-full py-3 flex-col rounded-2xl" onclick="btnColor(5)">
                     <img src="/assets/opt-6.png" alt="">
                     <p>Transaction</p>
                 </button>
@@ -91,8 +92,50 @@
             </div>
         </section>
 
+        <!-- Add money -->
+        <section id="add-money-container" class="add-money w-11/12 mx-auto hidden">
+            <div class="py-3">
+                <h3 class="text-neutral font-bold">Add Money</h3>
+            </div>
+            <!-- add money form -->
+            <div class="card bg-base-100 shadow-2xl rounded-2xl">
+                <div class="card-body">
+                    <fieldset class="fieldset">
+                        <label class="label text-neutral/70 font-bold">Select Bank</label>
+                        <select class="select w-full rounded-full bg-base-200 focus:outline-none text-neutral/70">
+                            <option disabled selected>Select Bank</option>
+                            <option>City Bank</option>
+                            <option>Grameen Bank</option>
+                            <option>Islamic Bank</option>
+                            <option>Brac Bank</option>
+                            <option>Dhaka Bank</option>
+                            <option>Sonali Bank</option>
+                        </select>
+
+                        <label class="label text-neutral/70 font-bold">Bank Account Number</label>
+                        <input id="bank-account-number" type="text" maxlength="11" minlength="11"
+                            class="input w-full rounded-full bg-base-200 focus:outline-none"
+                            placeholder="Enter 11 digit user number" />
+
+                        <label class="label text-neutral/70 font-bold">Amount</label>
+                        <input id="add-money" type="number"
+                            class="input w-full rounded-full bg-base-200 focus:outline-none"
+                            placeholder="Enter amount to withdraw" />
+
+                        <label class="label text-neutral/70 font-bold">Pin Number</label>
+                        <input id="add-money-pin" type="password"
+                            class="input w-full rounded-full bg-base-200 focus:outline-none"
+                            placeholder="Enter 4 digit pin number" />
+
+                        <button id="add-money-btn" class="btn btn-primary rounded-full mt-4">Add Money</button>
+                    </fieldset>
+                </div>
+            </div>
+        </section>
+
+
         <!-- Cash Out Money  -->
-        <section class="money-cashout w-11/12 mx-auto hidden">
+        <section id="cash-out-container" class="money-cashout w-11/12 mx-auto hidden">
             <div class="py-3">
                 <h3 class="text-neutral font-bold">Cash Out</h3>
             </div>
@@ -107,12 +150,12 @@
                             placeholder="Enter 11 digit agent number" />
 
                         <label class="label text-neutral/70 font-bold">Amount</label>
-                        <input id="cashout-amount" type="number"
+                        <input id="withdraw-amount" type="number"
                             class="input w-full rounded-full bg-base-200 focus:outline-none"
                             placeholder="Enter amount to withdraw" />
 
                         <label class="label text-neutral/70 font-bold">Pin Number</label>
-                        <input id="cashout-pin" type="password"
+                        <input id="withdraw-user-pin" type="password"
                             class="input w-full rounded-full bg-base-200 focus:outline-none"
                             placeholder="Enter 4 digit pin number" />
 
@@ -124,39 +167,42 @@
         </section>
 
         <!-- transfer money -->
-         <section class="money-cashout w-11/12 mx-auto">
+        <section id="transfer-money-container" class="money-cashout w-11/12 mx-auto hidden">
             <div class="py-3">
                 <h3 class="text-neutral font-bold">Transfer Money</h3>
             </div>
-
-            <!-- cash out form -->
+            <!-- transfer money form -->
             <div class="card bg-base-100 shadow-2xl rounded-2xl">
                 <div class="card-body">
                     <fieldset class="fieldset">
                         <label class="label text-neutral/70 font-bold">User Account Number</label>
-                        <input id="agent-number" type="text" maxlength="11" minlength="11"
+                        <input id="user-account-number" type="text" maxlength="11" minlength="11"
                             class="input w-full rounded-full bg-base-200 focus:outline-none"
-                            placeholder="Enter 11 digit agent number" />
+                            placeholder="Enter 11 digit user number" />
 
                         <label class="label text-neutral/70 font-bold">Amount</label>
-                        <input id="cashout-amount" type="number"
+                        <input id="transfer-money" type="number"
                             class="input w-full rounded-full bg-base-200 focus:outline-none"
                             placeholder="Enter amount to withdraw" />
 
                         <label class="label text-neutral/70 font-bold">Pin Number</label>
-                        <input id="cashout-pin" type="password"
+                        <input id="transfer-user-pin" type="password"
                             class="input w-full rounded-full bg-base-200 focus:outline-none"
                             placeholder="Enter 4 digit pin number" />
 
-                        <button id="withdraw-btn" class="btn btn-primary rounded-full mt-4">Withdraw
+                        <button id="send-now" class="btn btn-primary rounded-full mt-4">Withdraw
                             Money</button>
                     </fieldset>
                 </div>
             </div>
         </section>
 
+
+
     </main>
     <script src="script/code_reducer.js"></script>
+    <script src="script/addMoney.js"></script>
+    <script src="script/transferMoney.js"></script>
     <script src="script/cashout.js"></script>
     <script src="script/home.js"></script>
 </body>
