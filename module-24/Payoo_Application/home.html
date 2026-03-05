@@ -32,7 +32,7 @@
 </head>
 
 <body class="max-w-md mx-auto bg-base-200">
-    <header class="border-b-2 border-gray-300">
+    <header class="border-b-2 border-gray-300 sticky top-0 bg-blue-200">
         <section class="w-11/12 mx-auto py-5 flex justify-between items-center">
             <div class="left-side flex gap-2 items-center">
                 <div class="logo-img max-w-[50px]">
@@ -84,7 +84,7 @@
                     <p>Pay Bill</p>
                 </button>
 
-                <button class="main-btn btn h-full py-3 flex-col rounded-2xl" onclick="btnColor(5)">
+                <button id="transaction-history-p-btn" class="main-btn btn h-full py-3 flex-col rounded-2xl" onclick="btnColor(5)">
                     <img src="/assets/opt-6.png" alt="">
                     <p>Transaction</p>
                 </button>
@@ -167,7 +167,7 @@
         </section>
 
         <!-- transfer money -->
-        <section id="transfer-money-container" class="money-cashout w-11/12 mx-auto hidden">
+        <section id="transfer-money-container" class="transfer-money w-11/12 mx-auto hidden">
             <div class="py-3">
                 <h3 class="text-neutral font-bold">Transfer Money</h3>
             </div>
@@ -190,15 +190,19 @@
                             class="input w-full rounded-full bg-base-200 focus:outline-none"
                             placeholder="Enter 4 digit pin number" />
 
-                        <button id="send-now" class="btn btn-primary rounded-full mt-4">Withdraw
-                            Money</button>
+                        <button id="send-now" class="btn btn-primary rounded-full mt-4">Send Money</button>
                     </fieldset>
                 </div>
             </div>
         </section>
 
-
-
+        <!-- transaction history -->
+         <section id="transaction-history" class="transaction-history-container w-11/12 mx-auto mb-9">
+            <div class="py-3 flex justify-between">
+                <h3 class="text-neutral font-bold">Transaction History</h3>
+                <p>View Alls</p>
+            </div>
+         </section>
     </main>
     <script src="script/code_reducer.js"></script>
     <script src="script/addMoney.js"></script>
